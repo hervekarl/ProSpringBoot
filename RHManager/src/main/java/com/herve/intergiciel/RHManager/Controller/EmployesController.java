@@ -1,17 +1,32 @@
 package com.herve.intergiciel.RHManager.Controller;
 
+import java.util.List;
+
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+// import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-@RestController
-@RequestMapping("/rh")
-public class HumainResourcesController {
+import com.herve.intergiciel.RHManager.Modeles.Employe;
+import com.herve.intergiciel.RHManager.RHRepository.EmployesRepository;
 
-    @GetMapping("/employees")
-    public String getEmployees() {
-        return "List of employees";
-    }
+@RestController
+// @RequestMapping("/rh/employees")
+public class EmployesController {
+
+     
+    // private EmployesRepository employeRepository;
+
+    // @GetMapping(path ="/employees", produces = "application/json")
+    // public List<Employe> getEmployeRepository() {
+    //     return this.employeRepository.findAll();
+    // }
+
+    // @PostMapping(path ="/employees/create", produces = "application/json")
+    // public Employe createEmployeRepository(Employe employe) {
+    //     Employe em= this.employeRepository.save(employe);
+    //     return em;
+    // }
     // @GetMapping("/departments")
     // public String getDepartments() {
     //     return "List of departments";

@@ -9,10 +9,10 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.herve.intergiciel</groupId>
-	<artifactId>mygateway</artifactId>
+	<artifactId>myconfig</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>mygateway</name>
-	<description>api d&apos;entrer de toutes les requêtes pour assurer la sécurité externe et interne entre les microservices</description>
+	<name>myconfig</name>
+	<description>(centralisation de la Gestion des microservices )microservice de configuration de decouverte des services et des endpoints des differents services</description>
 	<url/>
 	<licenses>
 		<license/>
@@ -36,13 +36,9 @@
 			<artifactId>spring-boot-starter-actuator</artifactId>
 		</dependency>
 		<dependency>
-    <groupId>org.springframework.cloud</groupId>
-    <artifactId>spring-cloud-starter-config</artifactId>
-</dependency>
-<dependency>
-    <groupId>org.springframework.cloud</groupId>
-    <artifactId>spring-cloud-starter-gateway</artifactId>
-</dependency>
+			<groupId>org.springframework.cloud</groupId>
+			<artifactId>spring-cloud-config-server</artifactId>
+		</dependency>
 		<dependency>
 			<groupId>org.springframework.cloud</groupId>
 			<artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>

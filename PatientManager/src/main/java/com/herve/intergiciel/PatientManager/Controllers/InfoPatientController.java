@@ -2,7 +2,6 @@ package com.herve.intergiciel.PatientManager.Controllers;
 
 import java.util.List;
 
-import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -17,6 +16,7 @@ import lombok.AllArgsConstructor;
 @RestController
 @RequestMapping("/patient")
 @AllArgsConstructor
+
 public class InfoPatientController {
 
     private final InfoPatientRepository infoPatientRepository;
@@ -27,7 +27,7 @@ public class InfoPatientController {
         return infoPatientRepository.save(infoPatient);
     }
 
-    @GetMapping(produces = MediaType.APPLICATION_JSON_VALUE)
+    @GetMapping(produces = "application/json")
     public List<InfoPatient> search() {
         return infoPatientRepository.findAll();
     }
@@ -41,7 +41,7 @@ public class InfoPatientController {
         }
     }
 
-    @PostMapping(path = "/delete", consumes = "application/json")
+    @PostMapping(path = "/delete/", consumes = "application/json")
     public void delete(@RequestBody InfoPatient infoPatient) {
         if (infoPatientRepository.existsById(infoPatient.getIdPat())) {
             infoPatientRepository.deleteById(infoPatient.getIdPat());
